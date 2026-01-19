@@ -1,12 +1,15 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(
-    name='web_to_apk_tool',
+    name='webtoapklib', 
     version='1.0',
-    description='A library to convert websites to apk files ',
+    description='A library to convert websites to apk files',
     author='shaik janu',
-    py_modules=['apk_builder'],
-    include_package_data=True,   
+    packages=find_packages(),  
+    include_package_data=True,
+    package_data={
+        'webtoapklib': ['*.apk', '*.keystore'], 
+    },
     install_requires=[
         'Pillow',
     ],
